@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Movie and Anime Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Family Movie and Anime Sharing</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="homeLink">Home</a></li>
+                <li><a href="#" id="tvShowsLink">TV Shows</a></li>
+                <li><a href="#" id="moviesLink">Movies</a></li>
+                <li><a href="#" id="myListLink">My List</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." oninput="filterContent()">
+        </div>
+        <div class="profile-container">
+            <select id="profileSelect"></select>
+            <button id="addProfileButton" onclick="openProfilesModal()">Add Profile</button>
+            <button id="signOutButton" onclick="signOut()">Sign Out</button>
+        </div>
+    </header>
+    <main>
+        <section class="episodes">
+            <h2>One Piece</h2>
+            <div class="episode-list">
+                <!-- Link to One Piece HTML page -->
+                <div class="episode">
+                    <a href="one_piece.html">
+                        <img src="one_piece_cover.jpg" alt="One Piece">
+                        <span>One Piece</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Sections (Family Movies, Documentaries, etc.) -->
+        <section class="category" id="comedy">
+            <h2>Comedy</h2>
+            <div class="category-list">
+                <!-- Dummy content for Comedy -->
+                <div class="video">
+                    <a href="#" data-video="comedy1.mp4">
+                        <img src="comedy1.jpg" alt="Comedy 1">
+                        <span>Comedy 1</span>
+                    </a>
+                </div>
+                <div class="video">
+                    <a href="#" data-video="comedy2.mp4">
+                        <img src="comedy2.jpg" alt="Comedy 2">
+                        <span>Comedy 2</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category" id="drama">
+            <h2>Drama</h2>
+            <div class="category-list">
+                <!-- Dummy content for Drama -->
+                <div class="video">
+                    <a href="#" data-video="drama1.mp4">
+                        <img src="drama1.jpg" alt="Drama 1">
+                        <span>Drama 1</span>
+                    </a>
+                </div>
+                <div class="video">
+                    <a href="#" data-video="drama2.mp4">
+                        <img src="drama2.jpg" alt="Drama 2">
+                        <span>Drama 2</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add more sections as needed -->
+
+    </main>
+
+    <!-- Video Player -->
+    <video controls id="mainVideo" class="featured-video">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Function to filter content based on search input
+        function filterContent() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var categories = document.querySelectorAll('.category');
+            
+            categories.forEach(function(category) {
+                var videos = category.querySelectorAll('.video');
+                
+                videos.forEach(function(video) {
+                    var title = video.querySelector('span').textContent.toLowerCase();
+                    if (title.includes(input)) {
+                        video.style.display = 'block';
+                    } else {
+                        video.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Example function to open Profiles modal
+        function openProfilesModal() {
+            // Replace with your implementation
+        }
+
+        // Example function to sign out
+        function signOut() {
+            // Replace with your implementation
+        }
+    </script>
+</body>
+</html>
