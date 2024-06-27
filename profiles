@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Select Profile</h1>
+    </header>
+    <main>
+        <section id="profilesScreen" class="profiles-screen">
+            <div class="profiles-list">
+                <h2>Profiles</h2>
+                <ul>
+                    <li><button onclick="selectProfile('Karen')">Karen</button></li>
+                    <li><button onclick="selectProfile('Shane')">Shane</button></li>
+                    <li><button onclick="selectProfile('Tyler')">Tyler</button></li>
+                    <li><button onclick="selectProfile('Weston')">Weston</button></li>
+                </ul>
+            </div>
+            <div class="add-profile">
+                <button onclick="openAddProfileModal()">Add Profile</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+    <script>
+        function selectProfile(profileName) {
+            // Save selected profile to local storage or session
+            // Redirect to index.html or another page
+            // Example: localStorage.setItem('selectedProfile', profileName);
+            window.location.href = "index.html"; // Replace with your redirection logic
+        }
+
+        function openAddProfileModal() {
+            // Add logic to open a modal or form for adding a new profile
+            console.log("Add Profile clicked");
+            // Example: show a form/modal to add a new profile
+        }
+    </script>
+</body>
+</html>
